@@ -35,9 +35,10 @@ class InquiryForm(forms.Form):
     from_email = 'mshiro.it@gmail.com'
     to_list = [
       #'test@example.com'
+      email
     ]
     cc_list = [
-      email
+      #email
     ]
 
     message = EmailMessage(subject=subject, body=message, from_email=from_email, to=to_list, cc=cc_list)
