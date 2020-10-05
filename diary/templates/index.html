@@ -13,9 +13,14 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="site-heading">
-            <h1>Private Diary</h1>
-            <span class="subheading">あなた専用の日記保存サービス</span>
+            <h1>Dear Diary</h1>
+            <span class="subheading">秘密の日記帳</span>
+            {% if user.is_authenticated %}
+            <a href="{% url 'diary:diary_list' %}" class="btn btn-primary btn-xl rounded-pill mt-5">DIARY LIST</a>
+            {% else %}           
             <a href="{% url 'account_login' %}" class="btn btn-primary btn-xl rounded-pill mt-5">LOG IN</a>
+            {% endif %}
+
           </div>
         </div>
       </div>
@@ -32,53 +37,74 @@
         <div class="post-preview">
           <a href="post.html">
             <h2 class="post-title">
-              Man must explore, and this is exploration at its greatest
+              家庭菜園
             </h2>
             <h3 class="post-subtitle">
-              Problems look mighty small from 150 miles up
+              白菜、キャベツ、リーフレタス、ブロッコリの苗を植えた。上手く育つといいな。
             </h3>
           </a>
           <p class="post-meta">Posted by
-            <a href="#">Start Bootstrap</a>
-            on September 24, 2019</p>
+            <a href="#">Anonymouse</a>
+            on September 24, 2020</p>
         </div>
         <hr>
         <div class="post-preview">
           <a href="post.html">
             <h2 class="post-title">
-              I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.
+              Today's Meal 
             </h2>
+            <h3 class="post-subtitle">
+              Breakfast:
+
+Cereal with 1% milk
+
+Half a grapefruit
+
+Coffee
+
+Lunch:
+
+Green salad, grilled chicken,
+
+Water
+
+Dinner:
+
+Chicken Curry
+
+water
+            </h3>
           </a>
           <p class="post-meta">Posted by
-            <a href="#">Start Bootstrap</a>
+            <a href="#">Anonymouse</a>
             on September 18, 2019</p>
         </div>
         <hr>
         <div class="post-preview">
-          <a href="post.html">
+          <a href="#">
             <h2 class="post-title">
-              Science has not yet mastered prophecy
+              読書
             </h2>
             <h3 class="post-subtitle">
-              We predict too much for the next year and yet far too little for the next ten.
+              翔ぶが如く。「本日天気晴朗なれども波高し」。秋山真之の言葉がとても語感が良く、印象に残った。
             </h3>
           </a>
           <p class="post-meta">Posted by
-            <a href="#">Start Bootstrap</a>
+            <a href="#">Mr.Hawks</a>
             on August 24, 2019</p>
         </div>
         <hr>
         <div class="post-preview">
-          <a href="post.html">
+          <a href="#">
             <h2 class="post-title">
-              Failure is not an option
+              From Franz Kafka’s diaries
             </h2>
             <h3 class="post-subtitle">
-              Many say exploration is part of our destiny, but it’s actually our duty to future generations.
+              Germany has declared war on Russia. Swimming in the afternoon.
             </h3>
           </a>
           <p class="post-meta">Posted by
-            <a href="#">Start Bootstrap</a>
+            <a href="#">Franz Kafka</a>
             on July 8, 2019</p>
         </div>
         <hr>
@@ -91,5 +117,7 @@
   </div>
 
   <hr>
+
+  
 
 {% endblock %}
