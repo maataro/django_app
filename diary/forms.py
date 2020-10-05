@@ -13,16 +13,16 @@ class InquiryForm(forms.Form):
     super().__init__(*args, **kwargs)
 
     self.fields['name'].widget.attrs['class'] = 'form-control col-9'
-    self.fields['name'].widget.attrs['placeholder'] = 'お名前をここに入力してください。'
+    self.fields['name'].widget.attrs['placeholder'] = 'Name'
 
     self.fields['email'].widget.attrs['class'] = 'form-control col-11'
-    self.fields['email'].widget.attrs['placeholder'] = 'メールアドレスをここに入力してください。'
+    self.fields['email'].widget.attrs['placeholder'] = 'Email Address'
 
     self.fields['title'].widget.attrs['class'] = 'form-control col-11'
-    self.fields['title'].widget.attrs['placeholder'] = 'タイトルをここに入力してください。'
+    self.fields['title'].widget.attrs['placeholder'] = 'Title'
 
     self.fields['message'].widget.attrs['class'] = 'form-control col-12'
-    self.fields['message'].widget.attrs['placeholder'] = 'メッセージをここに入力してください。'
+    self.fields['message'].widget.attrs['placeholder'] = 'Message'
 
   def send_email(self):
     name = self.cleaned_data['name']
